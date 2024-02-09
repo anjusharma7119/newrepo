@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for each
+      //ist argument is always element 2nd is index and 3rd is array
+      //break and continue doesnot work in foreach
+      const arr = [1,2,3,4,5];
+      arr.forEach(function (element, index, array) {
+        //console.log(index, element);
+      });
+
+      //for each on maps and sets
+      const mp = new Map ([
+        [1,"jammu"],
+        [2,"faridabad"],
+        [3,"haryana"],
+        [4,"ramnagar"],
+      ]);
+
+      mp.forEach(function (value1,key1,mp1){
+      //  console.log(key1, value1,mp1);
+      });
+
+      const place = new Set([1,2,3,4,5]);
+
+      //sets has no index or key so key will be same as value
+      place.forEach(function(value,key,x){
+        console.log(key,value,x);
+      });
+
+
+    </script>
+</body>
+</html>

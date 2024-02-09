@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const restaurant = {
+        name: "cafe cofee",
+        location: "jammu,india",
+        categories: ["italian", "vegetarian", "chinesse", "indian"],
+        starterMenu: ["momos", "spring roll", "garlic bread", "noodles"],
+        mainMenu: ["pizza", "pasta", "coffee"],
+
+        orderIngredients: function (ing1, ing2, ing3) {
+          console.log(`you have ordered: ${ing1}, ${ing2}, ${ing3}`);
+        },
+      };
+
+      const arr1 = [3, 4, 5, 6, 7];
+      //   console.log(arr1);
+
+      //copying element of array 1 to array 2
+      const arr2 = [1, 2, arr1[0], arr1[1], arr1[2], arr1[3], arr1[4]];
+      //   console.log(arr2);
+
+      //use spread operator to access array elements individually
+      //   console.log(...arr1);
+
+      //ES6 method
+      //spread operator is similar to destructing but it takes all elements from array and does not create new variables
+      const arr3 = [1, 2, ...arr1]; //spread operator
+      //   console.log(arr3);
+
+      const newMenu = [...restaurant.mainMenu, "broclii", "cookies"];
+      //console.log(newMenu);
+
+      //for loop to traverse
+       for (const item of newMenu) console.log(item);
+       for (const item of newMenu.entries()) console.log(item);
+       for (const [i, e] of newMenu.entries()) console.log(i, e);
+      for (const i in arr1){
+        console.log(i);
+        console.log(arr1[i]);
+      } 
+
+      // console.log([...newMenu.entries()]);
+
+      //create a copy
+      const mainMenuCopy = [...restaurant.mainMenu];
+      //   console.log(mainMenuCopy);
+
+      //join two arrays
+      const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+      //   console.log(menu);
+
+      //we can use spread on strings also
+      let str = "anju";
+      let st = [...str, " ", "a"];
+      //console.log(st);
+
+      //cannot do
+      //console.log(`${...str} sharma`);
+
+      //using spread operator to pass individual element of array to function
+      //   const ingredients = [
+      //     prompt("Enter ist ingredient: "),
+      //     prompt("Enter 2nd ingredient: "),
+      //     prompt("Enter 3rd ingredient: "),
+      //   ];
+      //   restaurant.orderIngredients(...ingredients);
+
+      //spread operator for objects
+      const newRestaurant = {
+        founder: "belly", //adding new property
+        ...restaurant,
+      };
+      // console.log(newRestaurant);
+
+      //deep copy the object
+      const copyRes = {...restaurant};
+      copyRes.name = "cyber cafe"
+
+      //console.log(restaurant.name, copyRes.name);
+    </script>
+  </body>
+</html>

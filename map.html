@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //create an empty map
+      const rest = new Map();
+
+      //set used to set value
+      rest.set("hello", "nameste");
+      //.set return the map
+      //console.log(rest.set("world", "duniya"));
+
+      //can pass array
+      rest.set("culture", ["northern", "southern"]);
+
+      rest
+        .set("language", "hindi")
+        .set("animal", "tiger")
+        .set("fruit", "mango")
+        .set(true, "we are")
+        .set(false, "we are not");
+      console.log(rest);
+
+      //get used to get value
+
+      console.log(rest.get("name"));
+      console.log(rest.get(true));
+      //   console.log(rest.get("fruit"));
+
+      const ani = "tiger";
+      const fru = "mango";
+
+      //   console.log(
+      //     rest.get(ani == rest.get("animal") && fru == rest.get("fruit"))
+      //   );
+
+      const arr =[1,2]
+      rest.set(arr,"goat");
+      console.log(rest);
+      console.log(rest.get([1,2]));
+      console.log(rest.get(arr));
+
+      //some more functions
+
+      //   console.log(rest.has("fruit"));
+      //   rest.delete("animal");
+      //   console.log(rest);
+      //   console.log(rest.size);
+
+      //create map without set function
+
+      const ques = new Map([
+        ["question", "what is the best"],
+        [1, "C"],
+        [2, "C++"],
+        [3, "java"],
+        ["correct", 3],
+        [true, "correct ans"],
+        [false, "wrong ans"],
+      ]);
+
+      console.log(ques.get("question"));
+
+      for (const [i, j] of ques) {
+        if (typeof i === "number") console.log(i, j);
+      }
+
+      //   const ans = Number(prompt("your ans"));
+
+      //   console.log(ques.get(ques.get("correct") === ans));
+
+      //conver map to array
+      console.log(...ques);
+      console.log(...ques.keys());
+      console.log(...ques.values());
+      console.log(ques.entries());
+    </script>
+  </body>
+</html>

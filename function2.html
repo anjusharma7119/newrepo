@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const bookings = [];
+      const createBooking = function (
+        flightNum,
+        numPassenger = 100,
+        price = 1000
+      ) {
+        //values of flightNum,numPassenger and price will assign to the properties of booking object
+        //enhanced objects
+        const booking = {
+          flightNum,
+          numPassenger,
+          price,
+        };
+
+        // bookings.push(booking);
+        // console.log(typeof booking);
+        // console.log(typeof bookings);
+        // console.log(booking);
+        // console.log(bookings);
+      };
+
+      createBooking("hello", 4);
+      createBooking("hello");
+
+      const flight = "abcd";
+      const person = {
+        name: "anju",
+        password: 2000,
+      };
+
+      // const checkIN = function (flight, passenger) {
+      //   //this flight is the flight of function so global flight will not change
+      //   //passenger is the person
+      //   flight = "xyz";
+      //   passenger.name = "shriya";
+      // };
+
+      // checkIN(flight, person);
+      // console.log(flight);
+      // console.log(person);
+
+      //high order functions
+      // const upperWord = function (str) {
+      //   const [first, ...others] = str.split(" ");
+      //   //others is an object
+      //   return [first.toUpperCase(), ...others].join(" ");
+      // };
+
+      // const transform = function (str, fn) {
+      //   console.log(`original string is ${str}`);
+      //   console.log(`new string is ${fn(str)}`);
+      //   console.log(fn.name);
+      // };
+      // transform("javascript is fun", upperWord);
+
+      // callback functions
+      // const high = function () {
+      //   console.log("hello");
+      // };
+      // document.body.addEventListener("click", high);
+      // ["anju", "shriya"].forEach(high);
+
+      //returning function from function
+      // const greet = function (greeting) {
+      //   return function (name) {
+      //     console.log(`${greeting} ${name}`);
+      //   };
+      // };
+      // const greeter = greet("hey");
+      // greeter("anju");
+      // greet("hey")("shriya");
+
+      // const greetArr = (greeting) => (name) =>
+      //   console.log(`${greeting} ${name}`);
+      // greetArr("hi")("gaurav");
+
+      //call method
+      const person1 = {
+        fName: "anju",
+        lName: "sharma",
+        age: 20,
+        number: [],
+        fun: function (x, y) {
+          console.log(this.fName, this.lName);
+          console.log(x + y);
+          this.number.push(x, y);
+          console.log(this.number);
+        },
+      };
+
+      const person2 = {
+        fName: "shriya",
+        lName: "sharma",
+        age: 22,
+        number: [],
+      };
+
+      // person1.fun(1, 2);
+
+      const add = person1.fun;
+      //it will not work if this keyord is used
+      //add(1,5);
+
+      //use call method,call will take ist argument as object from which we are calling and other as function parameters
+      // add.call(person2, 3, 7);
+
+      //apply method
+      //it is same as call but take function parameters  as array
+      //so apply take only two arguments one object and second array
+      const arr = [5, 3];
+      //add.apply(person2, arr);
+      //add.apply(person2, [2, 2]);
+
+      //for call
+      // add.call(person2, ...arr);
+
+      //bind function
+      //it binds the object with function of other object
+      //bind takes always ist argument as object
+      const newAdd1 = add.bind(person2);
+      // newAdd1(4, 2);
+
+      const newAdd2 = add.bind(person2, 10);
+       newAdd2(10);
+
+      //challenge
+      const addTax = function (rate) {
+        return function (value) {
+          return value + value * rate;
+        };
+      };
+
+      const tax = addTax(0.1);
+      //console.log(tax(200));
+
+      //challenge
+    </script>
+  </body>
+</html>

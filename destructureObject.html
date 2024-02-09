@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const restaurant = {
+        name: "cafe cofee",
+        location: "jammu,india",
+        categories: ["italian", "vegetarian", "chinesse", "indian"],
+        starterMenu: ["momos", "spring roll", "garlic bread", "noodles"],
+        mainMenu: ["pizza", "pasta", "coffee"],
+
+        order: function (starterIndex, mainIndex) {
+          return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]; //return array
+        },
+
+        openingHours: {
+          thu: {
+            open: 12,
+            close: 23,
+          },
+          fri: {
+            open: 11,
+            close: 23,
+          },
+          sat: {
+            open: 0,
+            close: 24,
+          },
+        },
+
+        //function which take object as parameter
+        orderDelivery: function ({
+          starterIndex = 0,
+          mainIndex = 0,
+          location = "jammu",
+          time = 0,
+        }) {
+          console.log(`Order recieved. Your order ${this.starterMenu[starterIndex]} 
+          and ${this.mainMenu[mainIndex]} will be delivered in ${location} at ${time} `);
+        },
+      };
+
+      //function call by passing object as arguments
+      restaurant.orderDelivery({
+        starterIndex: 2,
+        mainIndex: 2,
+        location: "jammu",
+        time: 9,
+      });
+      //destructuring objects with property name
+      const { name, openingHours, categories } = restaurant;
+      console.log(name, openingHours, categories);
+
+      //destructuring objects with different name
+      const {
+        name: restaurantName,
+        openingHours: restaurantHours,
+        categories: restaurantCategory,
+      } = restaurant;
+      console.log(restaurantName, restaurantHours, restaurantCategory);
+
+      //default values
+      const { menu = [], starterMenu: starter = [] } = restaurant;
+      console.log(menu, starter);
+
+      //mutating values
+      let a = 22;
+      let b = 33;
+      const obj = {
+        a: 23,
+        b: 7,
+      };
+      //   console.log(obj.a, obj.b);
+      //   console.log(a, b);
+
+      //swapping the variable value with object value
+      //without these paranthesis the compiler will interpret  {a,b} as code block and we are 
+      //trying to assign value to code block which is an error
+      ({ a, b } = obj);
+      //   console.log(a, b);
+
+      //nested object destructuring
+      const { fri } = restaurant.openingHours;
+      console.log(fri); //whole value
+
+      const {
+        fri: { open, close },
+      } = openingHours;
+      //   console.log(open, close); //particular value
+
+      const {
+        fri: { open: opening, close: closing },
+      } = openingHours; //destructuring with different names
+      //   console.log(opening, closing);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      //use of '-' operator
+      var now = 2022;
+      var ageAnju = now - 2003;
+      var ageShriya = now - 2004;
+      // console.log(ageAnju, ageShriya);
+
+      //use of '*'and '/' operator
+      // console.log(ageAnju * 2, ageAnju / 3, 2 ** 3)
+      //2**3= 2 raised to power 3
+
+      //use of '+' operator
+      var firstName = "anju";
+      var lastName = "sharma";
+      // console.log(firstName + " " + lastName);
+
+      //use of assignment opertor
+      let x = 100;
+      x += 100; //x+100=200
+      x++; //x=201;
+      x--; //x=200;
+      // console.log(x);
+
+      //comparison operator
+      // console.log(ageAnju > ageShriya);
+      // let bool = (ageShriya < 18);
+      // console.log(bool);
+
+      //SHORT CIRCUITING
+
+      //OR
+      console.log(true || 0);
+      console.log("" || "hello");
+      console.log(3 || "hello");
+      console.log(undefined || null);
+
+      //assigning value to age in respect of year
+      //   let age = 0;
+      //   const year = age || 2000;
+      //   console.log(year);
+
+      //AND
+      console.log(true && 0);
+      console.log("" && "hello");
+      console.log(3 && "hello");
+      console.log(undefined && null);
+
+      //ASSIGNMENT OPERATOR
+      const person1 = {
+        first: "anju",
+        last: "sharma",
+        age: 19,
+      };
+      const person2 = {
+        first: "shriya",
+        last: "sharma",
+      };
+
+      //old method
+      //   person1.age = person1.age || 10;
+      //   person2.age = person2.age || 20;
+
+      //new method
+      //same for && and ?? operator
+
+      person1.age ||= 10;
+      person2.age ||= 10;
+
+      //console.log(person1);
+      //console.log(person2);
+
+      const num = 0;
+
+      const guest = num || 10;
+      console.log(guest);
+       
+      // null value for nulllish operator is NULL and undefined
+      const guests = num ?? 10;
+      console.log(guests);
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //boxing
+      str = "hello world";
+      let text = 'We are the so-called "Vikings" from the north.';
+      console.log(str[0]);
+      console.log("hello".length);
+      console.log(text);
+
+      console.log(str.indexOf("l"));
+      console.log(str.lastIndexOf("l"));
+      console.log(str.indexOf("llo"));
+
+      //it will not change original string
+      console.log(str.slice(4));
+      //4 is included and 7 is excuted.
+      console.log(str.slice(4, 7));
+
+      //negative start from right side
+      console.log(str.slice(-2));
+      console.log(str.slice(1, -2));
+
+      console.log(str.toLowerCase());
+      console.log(str.toUpperCase());
+      console.log(str.trim());
+
+      const a = "23&";
+      const b = a.replace("&", "*");
+      console.log(b);
+
+      const x = "all come to gate 2.gate 2";
+      //console.log(x.replace("gate", "door"));
+      console.log(x.replaceAll("gate", "door"));
+      //console.log(x.replace(/gate/g, "door"));
+
+      const plane = "start";
+      console.log(plane.includes("ta"));
+      console.log(plane.startsWith("ta"));
+      console.log(plane.endsWith("rt"));
+
+      console.log("anju-sharma".split("-"));
+      const [first, last] = "anju sharma".split(" ");
+      const newName = ["miss", first, last].join("-");
+      console.log(newName);
+
+      //padding
+      const message = "hello world";
+      console.log(message.padStart(15, "+").padEnd(20, "-"));
+
+      //repeat
+      console.log(message.repeat(3));
+    </script>
+  </body>
+</html>

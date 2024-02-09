@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      //declaring array
+      var arr1 = [1, 2, 3, 4];
+      console.log(arr1);
+
+      //declaring array with Array() function
+      var arr2 = new Array(1, 2, 3, 4);
+      console.log(arr2);
+
+      //declaring array with in a array
+      var arr3 = ["anju", 19, arr1];
+      console.log(arr3);
+
+      //function inside a array. Function is an expression. Array allows expression within.
+      function age(birthYear) {
+        return 2022 - birthYear;
+      }
+      var arr4 = [age(2003), age(2000), age(2004)];
+      console.log(arr4);
+
+      //ARRAY OPERATIONS
+      console.log(arr1.length); //gives length of array
+
+      arr1.push(5); //add 5 to arr1 in last
+      console.log(arr1);
+      var length = arr1.push(6); //add 6 and return length of array to length varibale
+      console.log(length);
+
+      arr2.unshift(0); // add 0 to arr2 in beginning and return length of array to length
+      console.log(arr2);
+
+      var popped1 = arr1.pop(); //remove last element and return last element to variable popped
+      console.log(arr1);
+      console.log(popped1);
+
+      var popped2 = arr2.shift(); //remove first element and return element to variable popped
+      console.log(arr2);
+      console.log(popped2);
+
+      console.log(arr1.indexOf(2)); //return the index of 2 in arr1
+
+      console.log(arr1.includes(2)); //return true if arr1 include 2 or false
+      console.log(arr1.includes(20));
+    </script>
+  </body>
+</html>

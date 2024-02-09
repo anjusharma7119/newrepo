@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const week = ["mon", "tue", "wed"];
+      const openingHours = {
+        //can also defined like this
+        [week[0]]: {
+          open: 12,
+          close: 23,
+        },
+        [week[0 + 1]]: {
+          open: 11,
+          close: 23,
+        },
+        sat: {
+          open: 0,
+          close: 24,
+        },
+      };
+
+      const restaurant = {
+        name: "cafe cofee",
+        location: "jammu,india",
+        categories: ["italian", "vegetarian", "chinesse", "indian"],
+        starterMenu: ["momos", "spring roll", "garlic bread", "noodles"],
+        mainMenu: ["pizza", "pasta", "coffee"],
+
+        //method to add property inside object which is defined outside
+        //old method
+        // openingHours: openingHours,
+
+        //new method
+        openingHours,
+
+        //functions can be defined like this inside object
+        order(starterIndex, mainIndex) {
+          return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]; //return array
+        },
+
+        //function which take object as parameter
+        orderDelivery({
+          starterIndex = 0,
+          mainIndex = 0,
+          location = "jammu",
+          time = 0,
+        }) {
+          console.log(`Order recieved. Your order ${this.starterMenu[starterIndex]}
+          and ${this.mainMenu[mainIndex]} will be delivered in ${location} at ${time} `);
+        },
+      };
+
+      console.log(restaurant);
+
+      //OPTIONAL CHANING
+      //it check whether property exist in obj or not
+
+      //check for sun in opening hours.it is not an efficient method
+      //firstly check for opening hours in res and then sun in opening hours
+      if (restaurant.openingHours && restaurant.openingHours.sun)
+        console.log(restaurant.openingHours.sun.open);
+
+      //without '?' it will give error
+      console.log(restaurant.openingHours.sun?.open);
+
+      //
+      const days = ["mon", "tue", "wed"];
+      for (const day of days) {
+        const open = restaurant.openingHours[day]?.open;
+        console.log(open);
+      }
+
+      //on method ,check if method exist or not
+      console.log(restaurant.order?.(1, 2));
+      console.log(restaurant.orders?.(1, 2));
+
+      //on array
+      const x = [
+        {
+          name: "anju",
+        },
+      ];
+      console.log(x[1]?.name);
+
+      const user = {
+        name: "anju",
+        age: 16,
+      };
+
+      console.log(user?.name);
+    </script>
+  </body>
+</html>
